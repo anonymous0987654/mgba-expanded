@@ -1480,7 +1480,7 @@ bool EReaderScanCard(struct EReaderScan* scan) {
 	size_t i;
 	for (i = 0; i < blocks; ++i) {
 		EReaderScanDetectBlockThreshold(scan, i);
-		int errors = 36 * 36;
+		unsigned int errors = 36 * 36;
 		while (!EReaderScanScanBlock(scan, i, true)) {
 			if (errors < EReaderBlockListGetPointer(&scan->blocks, i)->errors) {
 				return false;

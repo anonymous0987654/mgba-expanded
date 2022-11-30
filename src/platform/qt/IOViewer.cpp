@@ -1565,8 +1565,8 @@ IOViewer::IOViewer(std::shared_ptr<CoreController> controller, QWidget* parent)
 	, m_controller(controller)
 {
 	m_ui.setupUi(this);
-	const char* const* regs;
-	unsigned maxRegs;
+	const char* const* regs = nullptr;
+	unsigned maxRegs = 0;
 	switch (controller->platform()) {
 #ifdef M_CORE_GB
 	case mPLATFORM_GB:
@@ -1589,7 +1589,7 @@ IOViewer::IOViewer(std::shared_ptr<CoreController> controller, QWidget* parent)
 		break;
 	}
 
-	for (unsigned i = 0; i < maxRegs; ++i) {
+	for (unsigned i = 0; regs && i < maxRegs; ++i) {
 		const char* reg = regs[i];
 		if (!reg) {
 			continue;
