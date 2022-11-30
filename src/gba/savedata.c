@@ -389,7 +389,7 @@ void GBASavedataWriteFlash(struct GBASavedata* savedata, uint16_t address, uint8
 			mTimingSchedule(savedata->timing, &savedata->dust, FLASH_PROGRAM_CYCLES);
 			break;
 		case FLASH_COMMAND_SWITCH_BANK:
-			if (address == 0 && value < 2) {
+			if (address == 0 && value < 8) { /* increased from 2 flash memory banks */
 				_flashSwitchBank(savedata, value);
 			} else {
 				mLOG(GBA_SAVE, GAME_ERROR, "Bad flash bank switch");
