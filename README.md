@@ -1,3 +1,9 @@
+This fork
+---------
+
+This is a fork of mGBA that increases WRAM and Flash memory sizes beyond that of a real GBA so that specially crafted ROMS that require more memory can be run.  
+One such ROM is: <https://github.com/anonymous0987654/pokeemerald_rowe_living>
+
 mGBA
 ====
 
